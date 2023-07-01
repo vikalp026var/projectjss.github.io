@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CounterApplication</title>
+</head>
+<style>
+     *{
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+     }
+     body{
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          margin: 300px;
+          background-color: ghostwhite;
+     }
+     .box{
+          height: 40vh;
+          padding: auto;
+          width: 400px;
+          margin-left: 280px;
+          margin-top: 5px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 0 20px gray;
+     }
+     .content{
+         align-items: center;
+         justify-content: space-evenly;
+         text-align: center;
+         margin: 70px;
+         gap: 5px;
+
+     }
+     .button1{
+          margin-top: 20px;
+          padding: 5px;
+          cursor: pointer;
+     }
+     .button2{
+          margin-top: 20px;
+     }
+     .dec{
+          padding: 5px;
+     }
+     #inc:hover,#dec:hover,#reset:hover{
+          background-color: red;
+          font-weight: 900;
+          border-radius: 20px;
+          padding: 5px;
+          cursor: pointer;
+
+     }
+</style>
+<body>
+    <fieldset class="box">
+     <div class="content">
+          <div class="head">
+               Counter App
+          </div>
+          <div class="button1">
+               <button id="dec" onclick="dec()">Decrement by 1</button>
+               <span id="display">0</span>
+               <button id="inc">Increment by 1</button>
+          </div>
+          <div class="button2">
+               <button id="reset">Reset Value</button>
+          </div>
+     </div>
+     
+    </fieldset> 
+    <script>
+     const btn1=document.getElementById('dec');
+     const display=document.getElementById('display')
+     const btn2=document.getElementById('inc');
+     const reset=document.getElementById('reset')
+     btn1.addEventListener("click",()=>{
+          const value=Number(display.innerText);
+          if (value>0){
+               display.innerText=value-1;
+          }else{
+               alert("Not Allowed")
+          }
+     })
+     btn2.addEventListener("click",()=>{
+          const value=Number(display.innerText);
+          if (value<=10){
+               display.innerText=value+1;
+          }else{
+               alert("Not Allowed")
+          }
+     })
+     reset.addEventListener("click",()=>{
+          display.innerText=0;
+     })
+
+
+    </script>
+</body>
+</html>
